@@ -10,6 +10,7 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f1f1f1;
   padding: 20px;
+  color: #212121;
 }
 
 /* Centered container */
@@ -40,7 +41,7 @@ h1 {
   margin-right: 15px;
 }
 
-/* Date‐picker & button row */
+/* Date-picker & button row */
 .filters {
   display: flex;
   flex-direction: column;
@@ -70,8 +71,68 @@ button {
   color: black;
   cursor: pointer;
 }
+
 button:hover {
   background-color: #bfbfbf;
+}
+
+/* Gallery layout */
+.gallery {
+  padding: 20px 0;
+}
+
+.gallery .col {
+  display: flex;
+}
+
+.gallery .card {
+  height: 100%;
+  border: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.gallery .card-img-top {
+  height: 220px;
+  object-fit: cover;
+}
+
+.gallery .card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gallery .card-title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.gallery .card-text {
+  color: #666;
+  margin: 0;
+}
+
+/* Placeholder content */
+.placeholder {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.placeholder-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
 }
 
 /* Stack horizontally on wider screens */
@@ -80,65 +141,9 @@ button:hover {
     flex-direction: row;
     padding: 0;
   }
-  
+
   input[type="date"],
   button {
     width: auto;
   }
-}
-
-/* Gallery flex container */
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px;
-  justify-content: center;
-}
-
-/* Gallery items */
-.gallery-item {
-  flex: 1 1 100%;  /* full width by default */
-  min-width: 280px;
-  max-width: 500px;
-  background: white;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Three columns on wider screens */
-@media (min-width: 1000px) {
-  .gallery-item {
-    flex: 0 1 31%;
-  }
-}
-
-.gallery-item img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 4px;
-}
-
-.gallery-item p {
-  margin-top: 10px;
-  padding: 5px;
-  font-size: 14px;
-}
-
-/* Placeholder content */
-.placeholder {
-  flex: 1 1 100%;
-  text-align: center;
-  padding: 40px;
-  color: #666;
-}
-
-.placeholder-icon {
-  font-size: 48px;
-  margin-bottom: 20px;
 }
